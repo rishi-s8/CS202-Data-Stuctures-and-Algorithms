@@ -1,0 +1,304 @@
+#include "AVL.hpp"
+#include "RBTree.hpp"
+
+
+void printMenu()
+{
+  cout << endl << endl;
+  cout << "[1 x y] Insert (x,y) in the tree." << endl;
+  cout << "[2 x] Remove x from the tree." << endl;
+  cout << "[3 x] Find x in the tree." << endl;
+  cout << "[4] Print Value of maximum element in the tree." << endl;
+  cout << "[5] Print Value of minimum element in the tree." << endl;
+  cout << "[6] Print Pre_Order_Traversal of the tree." << endl;
+  cout << "[7] Print In_Order_Traversal of the tree." << endl;
+  cout << "[8] Print Post_Order_Traversal of the tree." << endl;
+  cout << "[9 x] Get Value corresponding to x in the tree." << endl;
+  cout << "[10 x] Get successor of x in the tree." << endl;
+  cout << "[11 x] Get predecessor of x in the tree." << endl;
+}
+
+
+int main()
+{
+  BinaryTree<int, string> tree;
+  int queries;
+  cout << "Enter Number of Queries: ";
+  cin >> queries;
+  int decision, x;
+  string y;
+  while(queries--)
+  {
+    printMenu();
+    cin >> decision;
+    switch (decision) {
+      case 1:
+        cin >> x >> y;
+        tree.insert(x,y);
+        break;
+      case 2:
+        cin >> x;
+        tree.remove(x);
+        break;
+      case 3:
+        cin >> x;
+        cout << tree.has(x) << endl;
+        break;
+      case 4:
+        cout << tree.maximum() << endl;
+        break;
+      case 5:
+        cout << tree.minimum() << endl;
+        break;
+      case 6:
+        cout << tree.print_pre_order() << endl;
+        break;
+      case 7:
+        cout << tree.print_in_order() << endl;
+        break;
+      case 8:
+        cout << tree.print_post_order() << endl;
+        break;
+      case 9:
+        cin >> x;
+        cout << tree.get(x) << endl;
+        break;
+      case 10:
+        cin >> x;
+        cout << tree.successor(x) << endl;
+        break;
+      case 11:
+        cin >> x;
+        cout << tree.predecessor(x) << endl;
+        break;
+      default:
+        cout << "Invalid Query.\n";
+        break;
+    }
+  }
+
+
+
+}
+
+
+
+
+  // RBTreeNode<int, int> a(3, 5);
+  // cout << a.key << " " << a.val << " "  << a.color <<  endl;
+  // int n;
+  // cin >> n;
+  // for(int i=0; i<n; ++i)
+  // {
+  //   int temp; int str;
+  //   cin >> temp >> str;
+  //   a.put(temp,str);
+  //   a.print_pre_order_pre_order();
+  // }
+
+  // a.put(13, 13);
+  // a.put(14,14);
+  // a.put(14,14);
+  // a.put(15,14);
+
+
+  // a.put(1, 1);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(2, 2);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(3, 3);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(4, 4);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(5, 5);
+  // a.print_pre_order();
+  cout << "----" << endl;
+  // a.put(70, 70);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(90, 90);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(62, 62);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(90);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(80);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(70);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(12, 12);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(15, 15);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(30, 30);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(18, 18);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(13, 13);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(29, 29);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // cout << "yolo" << endl;
+  // a.remove(53);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(11);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(8);
+  // a.print_pre_order();
+
+
+  // a.put(25, 25);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(14, 14);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(31, 31);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(10, 10);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(16, 16);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(27, 27);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(33, 33);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(7, 7);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(12, 12);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(15, 15);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(30, 30);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(18, 18);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(13, 13);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(29, 29);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // cout << "yolo" << endl;
+  // a.remove(53);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(11);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.remove(8);
+  // a.print_pre_order();
+ // cout << "----" << endl;
+//  cout << a.successor(14) << endl;
+  // cout << a.predecessor(12) << endl;
+  // cout << a.predecessor(8) << endl;
+
+
+ //  a.put(14, 14);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(17, 17);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(11, 11);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(7, 7);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(53, 53);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(4, 4);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(13, 13);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(12, 12);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.put(8, 8);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.remove(53);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.remove(11);
+ //  a.print_pre_order();
+ //  cout << "----" << endl;
+ //  a.remove(8);
+ //  a.print_pre_order();
+ // cout << "----" << endl;
+
+  // a.put(10, 10);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(85, 85);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(15, 15);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(70, 70);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(20, 20);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(60, 60);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(30, 30);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(50, 50);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(65, 65);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(80, 80);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(90, 90);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(40, 40);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(5, 5);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  // a.put(55, 55);
+  // a.print_pre_order();
+  // cout << "----" << endl;
+  return 0;
+}
